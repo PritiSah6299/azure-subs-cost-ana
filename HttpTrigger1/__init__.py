@@ -14,7 +14,7 @@ from azure.keyvault.secrets import SecretClient
 def main(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    key_vault_url = "https://sead-doc-pub-sbx-kv001.vault.azure.net/"
+    key_vault_url = "https://sead-lrn-pub-sbx-kv001.vault.azure.net/"
     secret_name = "st-azpriti"
 
     credential = DefaultAzureCredential()
