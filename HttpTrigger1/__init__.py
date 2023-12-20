@@ -20,7 +20,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     credential = DefaultAzureCredential()
     secret_client = SecretClient(vault_url=key_vault_url, credential=credential)
 
-    # connection_string = "DefaultEndpointsProtocol=https;AccountName=subscriptionbillingcost;AccountKey=JqHietoZPMsNyTyc4/Gn3SaZ//4bXeP/VApOA8UuvjANbBYeKDpiQq2CaKj9xPbvPAMHVTsQ1PCJ+AStOvL7PQ==;EndpointSuffix=core.windows.net"
+
     connection_string =secret_client.get_secret(secret_name).value
     container_name = "az-cost"
     blob_name = "anonymized_costs.csv"
